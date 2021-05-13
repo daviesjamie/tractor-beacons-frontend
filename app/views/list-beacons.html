@@ -20,18 +20,24 @@ All Tractor Beacons
     <p>Showing all Tractor Beacons.</p>
     
     <ol class="govuk-list results service-results">
+
+      {% for beacon in beacons %}
       <li class="results__item govuk-u-margin-bottom-0 govuk-u-padding-top-5">
         <div class="govuk-grid-row results__details">
           <div class="govuk-grid-column-two-thirds govuk-u-margin-bottom-5">
             <div>
-              <h2 class="results__name govuk-u-padding-top-1">Feather Ted's Favourite Beacon</h2>
+              <h2 class="results__name govuk-u-padding-top-1">{{ beacon.name }}</h2>
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Status
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <strong class="govuk-tag">active</strong>
+                    {% if beacon.activated %}
+                      <strong class="govuk-tag">activated</strong>  
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--grey">inactive</strong>
+                    {% endif %}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -39,7 +45,7 @@ All Tractor Beacons
                     Owner
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Khalil Duckfield
+                    {{ beacon.owner }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -47,7 +53,7 @@ All Tractor Beacons
                     Email
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <a href="mailto:lkimblin0@sbwire.com">lkimblin0@sbwire.com</a>
+                    <a href="mailto:{{ beacon.email }}">{{ beacon.email }}</a>
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -55,7 +61,7 @@ All Tractor Beacons
                     Contact Phone
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    330-575-2430
+                    {{ beacon.contact_phone }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -63,9 +69,9 @@ All Tractor Beacons
                     Emergency Contact
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">Leyla Kimblin</p>
-                    <p class="govuk-body">375-679-2819</p>
-                    <p class="govuk-body"><a href="mailto:lkimblin0@google.co.uk">lkimblin0@google.co.uk</a></p>
+                    <p class="govuk-body">{{ beacon.emergency_contact_name }}</p>
+                    <p class="govuk-body">{{ beacon.emergency_contact_phone }}</p>
+                    <p class="govuk-body"><a href="mailto:{{ beacon.emergency_contact_email }}k">{{ beacon.emergency_contact_email }}</a></p>
                   </dd>
                 </div>
               </dl>
@@ -73,6 +79,8 @@ All Tractor Beacons
           </div>
         </div>
       </li>
+      {% endfor %}
+
     </ol>
     
   </div>
