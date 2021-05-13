@@ -3,7 +3,10 @@
 This repo contains the front-end code for the Ministry of Farming Magic's
 Tractor Beacons service.
 
-It's built using the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs).
+It's built using the
+[GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs).
+
+![Screenshot of the Tractor Beacons service](screenshot.png)
 
 ## Getting Started
 
@@ -19,3 +22,6 @@ It's built using the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuap
    ```
 
 1. Open http://localhost:3000/ in your browser
+
+You'll probably also want to make sure you have the
+[backend API](https://github.com/simon-mt/Beacons) running.
