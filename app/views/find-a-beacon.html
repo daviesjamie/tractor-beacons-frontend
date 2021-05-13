@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find a Tractor Beacon
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">
+      Find a Tractor Beacon
+    </h1>
+
+    <p>Use this search to find the details of a specific tractor's beacon. Search using the tractor's name.</p>
+    
+    <form name="ServiceSearchForm" id="service-search-form" method="post" action="/list-beacons">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="Location">
+          Enter a Tractor Name
+        </label>
+        <input class="govuk-input govuk-input--width-20" type="text" id="Location" name="Location" value="">
+      </div>
+      <button class="govuk-button govuk-u-margin-bottom-4" type="submit">Search</button><br>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}
