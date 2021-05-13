@@ -26,6 +26,8 @@ module.exports = {
   useHttps: 'true',
 
   // Enable or disable Browser Sync
-  useBrowserSync: 'true'
+  useBrowserSync: 'true',
 
+  // The location of the Beacons API
+  beaconsApiRoot: 'http://localhost:9000/api'
 }

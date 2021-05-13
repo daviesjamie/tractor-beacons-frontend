@@ -20,8 +20,11 @@ All Tractor Beacons
     
     <p>Showing all Tractor Beacons.</p>
     
-    <ol class="govuk-list results service-results">
+    {% if error %}
+    {% include 'includes/error_box.html' %}
+    {% endif %}
 
+    <ol class="govuk-list results service-results">
       {% for beacon in beacons %}
       <li class="results__item govuk-u-margin-bottom-0 govuk-u-padding-top-5">
         <div class="govuk-grid-row results__details">

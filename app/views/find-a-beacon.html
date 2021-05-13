@@ -20,12 +20,12 @@ Find a Tractor Beacon
 
     <p>Use this search to find the details of a specific tractor's beacon. Search using the tractor's name.</p>
     
-    <form name="ServiceSearchForm" id="service-search-form" method="post" action="/list-beacons">
+    <form method="get" action="/list-beacons">
       <div class="govuk-form-group">
-        <label class="govuk-label" for="Location">
+        <label class="govuk-label" for="name">
           Enter a Tractor Name
         </label>
-        <input class="govuk-input govuk-input--width-20" type="text" id="Location" name="Location" value="">
+        <input class="govuk-input govuk-input--width-20" type="text" id="name" name="name" value="">
       </div>
       <button class="govuk-button govuk-u-margin-bottom-4" type="submit">Search</button><br>
     </div>
