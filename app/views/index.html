@@ -23,26 +23,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        MFM Tractor Beacons
+        Tractor Beacons
       </h1>
       <p>
         Welcome to the Tractor Beacon registry. You can use this page to view beacon information, search for a specific beacon, or view all active beacons.
       </p>
-
-      <h2 class="govuk-heading-m">Services</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/list-beacons">View all beacons</a>
-        </li>
-        <li>
-          <a href="/list-beacons?activated=true">View all active beacons</a>
-        </li>
-        <li>
-          <a href="/find-a-beacon">Find a beacon</a>
-        </li>
-      </ul>
     </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
+        Services
+      </h2>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m"><a href="/find-a-beacon">Find a beacon</a></h3>
+      <p>Search for a specific tractor's beacon.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m"><a href="/list-beacons">All beacons</a></h3>
+      <p>View all registered beacons.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m"><a href="/list-beacons?activated=true">Activated beacons</a></h3>
+      <p>View all activated beacons.</p>
+    </div>
+
   </div>
 
 {% endblock %}
