@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 router.get('/list-beacons', (req, res) => {
-    const beacons = [{
+    let beacons = [{
         "id": 1,
         "name": "Dracopis amplexicaulis (Vahl) Cass.",
         "owner": "Babs Linacre",
@@ -104,6 +104,10 @@ router.get('/list-beacons', (req, res) => {
         "emergency_contact_email": "hixer9@umich.edu",
         "activated": false
       }];
+    
+    if (req.query.activated) {
+        beacons = beacons.filter(b => b.activated);
+    }
 
     res.render('list-beacons.html', { beacons: beacons });
 });
