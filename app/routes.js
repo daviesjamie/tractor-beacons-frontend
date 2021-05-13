@@ -5,12 +5,17 @@ const axios = require('axios');
 const config = require('./config');
 
 router.get('/list-beacons', async (req, res) => {
-  let endpoint = `${config.beaconsApiRoot}/beacons`;
+  let endpoint;
 
   if (req.query.name) {
-    endpoint = `${endpoint}/${req.query.name}`;
+    // Search by name
+    endpoint = `${config.beaconsApiRoot}/beacons/${req.query.name}`;
   } else if (req.query.activated) {
-    endpoint = `${endpoint}/status?activated=${req.query.activated}`;
+    // Show all activated
+    endpoint = `${config.beaconsApiRoot}/beacons/status?activated=${req.query.activated}`;
+  } else {
+    // Show all
+    endpoint = `${config.beaconsApiRoot}/beacons`;
   }
 
   try {
